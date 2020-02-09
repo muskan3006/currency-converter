@@ -1,5 +1,5 @@
 package com.knoldus
-import math._
+
 /**
  * In this class we do the task of converting the amount from one type of currency to another type
  */
@@ -43,7 +43,7 @@ class CurrencyConverter {
    * @return
    */
 
-  def convertToInr(from: String, amount: Double): Double =  amount * conversionRateToInr(from)
+  def convertToInr(from: String, amount: Double): Double = amount * conversionRateToInr(from)
 
   /**
    * This method converts the Indian Rupees to the required currency
@@ -54,3 +54,5 @@ class CurrencyConverter {
    */
   def convertFromInr(to: String, amount: Double): Double = amount * conversionRateFromInr(to)
 }
+
+
