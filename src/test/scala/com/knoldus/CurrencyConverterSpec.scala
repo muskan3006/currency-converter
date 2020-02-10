@@ -16,16 +16,11 @@ class CurrencyConverterSpec extends FlatSpec with BeforeAndAfterAll {
   }
 
   "Converter method" should "return amount if from and to are same" in {
-    val actualResult = currencyConverter.converter("inr", "INR", 21)
+    val actualResult = currencyConverter.converter("usd", "usd", 21)
     val expectedResult = 21
     assert(expectedResult == actualResult)
   }
 
-  "Converter method" should "return equivalent amount if converted to Indian Rupees" in {
-    val actualResult = currencyConverter.converter("pkr", "InR", 21)
-    val expectedResult = 9.66
-    assert(expectedResult == actualResult)
-  }
 
   "Converter method" should "return converted amount if converted to other currency" in {
     val actualResult = currencyConverter.converter("yen", "auD", 21)
@@ -38,7 +33,7 @@ class CurrencyConverterSpec extends FlatSpec with BeforeAndAfterAll {
       val actualResult = currencyConverter.converter("ye", "au", 21)
     }
     catch {
-      case e:Exception => assert(e.getMessage == "This currency conversion is not possible")
+      case e: Exception => assert(e.getMessage == "This currency conversion is not possible")
     }
   }
 

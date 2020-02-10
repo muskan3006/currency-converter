@@ -15,7 +15,7 @@ class CurrencyConverter {
   private val conversionRateToInr: Map[String, Double] = Map("usd" -> 71.52, "euro" -> 78.28, "cad" -> 53.73,
     "pkr" -> 0.46, "gbp" -> 92.20, "aud" -> 47.72, "yen" -> 0.65, "idr" -> 0.0052, "sgd" -> 51.46, "inr" -> 1.00)
 
-  private val currency = List("usd","euro","cad","pkr","gbp","aud","yen","idr","sgd","inr")
+  private val currency = List("usd", "euro", "cad", "pkr", "gbp", "aud", "yen", "idr", "sgd", "inr")
 
   /**
    * A method that calls 2 functions to get the converted amount
@@ -26,7 +26,7 @@ class CurrencyConverter {
    * @return
    */
   def converter(from: String, to: String, amount: Double): Double = {
-    if (currency.contains(to.toLowerCase) && currency.contains(from.toLowerCase) && amount >= 0) {
+    if (currency.contains(to.toLowerCase) && currency.contains(from.toLowerCase) && amount > 0) {
       if (to.toLowerCase != from.toLowerCase) {
         val equivalentInr = convertToInr(from.toLowerCase, amount)
         val convertedAmount = convertFromInr(to.toLowerCase, equivalentInr)
@@ -35,7 +35,7 @@ class CurrencyConverter {
       else {
         amount
       }
-    } else{
+    } else {
       throw new Exception("This currency conversion is not possible")
     }
   }
