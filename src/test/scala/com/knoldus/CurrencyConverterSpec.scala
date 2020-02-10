@@ -33,7 +33,7 @@ class CurrencyConverterSpec extends FlatSpec with BeforeAndAfterAll {
       val actualResult = currencyConverter.converter("ye", "au", 21)
     }
     catch {
-      case e: Exception => assert(e.getMessage == "This currency conversion is not possible")
+      case exception: Exception => assert(exception.getMessage == "This currency conversion is not possible")
     }
   }
 
